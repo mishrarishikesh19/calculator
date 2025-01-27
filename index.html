@@ -4,69 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scientific Calculator</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Gradient background */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      color: #333;
-    }
-
-    .calculator {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 15px; /* Rounded corners */
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Shadow effect */
-      width: 320px;
-    }
-
-    .display {
-      width: 100%;
-      height: 60px;
-      margin-bottom: 15px;
-      border: none;
-      background: #eef2f3;
-      font-size: 1.8rem;
-      text-align: right;
-      padding: 10px;
-      border-radius: 10px; /* Smooth edges for input */
-    }
-
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-
-    .button {
-      padding: 15px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 10px; /* Rounded buttons */
-      background: #007bff;
-      color: white;
-      cursor: pointer;
-      text-align: center;
-      transition: transform 0.2s ease, background 0.3s ease;
-    }
-
-    .button:hover {
-      background: #0056b3;
-      transform: scale(1.05); /* Slight zoom on hover */
-    }
-
-    .button.function {
-      background: #6c757d;
-    }
-
-    .button.function:hover {
-      background: #5a6268;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
   <div class="calculator">
@@ -103,30 +42,6 @@
       <button class="button function" onclick="backspace()">⌫</button>
     </div>
   </div>
-
-  <script>
-    const display = document.getElementById('display');
-
-    function appendValue(value) {
-      display.value += value;
-    }
-
-    function clearDisplay() {
-      display.value = '';
-    }
-
-    function calculate() {
-      try {
-        display.value = eval(display.value);
-      } catch (e) {
-        alert('Invalid Expression');
-        clearDisplay();
-      }
-    }
-
-    function backspace() {
-      display.value = display.value.slice(0, -1);
-    }
-  </script>
 </body>
+<script src="script.js"></script>
 </html>
